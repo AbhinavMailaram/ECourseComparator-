@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Comparator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Learning marketplace</p>
+          <h1>Course Comparator</h1>
+        </div>
+        <div class="topbar-actions">
+          <button class="ghost-btn" id="resetFiltersBtn" type="button">Reset filters</button>
+          <button class="primary-btn" id="focusCompareBtn" type="button">Compare selected</button>
+        </div>
+      </header>
+
+      <main class="dashboard">
+        <aside class="filters-panel">
+          <section class="panel-block">
+            <label class="search-wrap" for="searchInput">
+              <span>Search courses</span>
+              <input id="searchInput" type="search" placeholder="Search by course or skill" />
+            </label>
+          </section>
+
+          <section class="panel-block">
+            <h2>Filter</h2>
+            <div class="field-group">
+              <label for="categoryFilter">Category</label>
+              <select id="categoryFilter">
+                <option value="all">All categories</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="levelFilter">Level</label>
+              <select id="levelFilter">
+                <option value="all">All levels</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="sortSelect">Sort by</label>
+              <select id="sortSelect">
+                <option value="score-desc">Best overall</option>
+                <option value="rating-desc">Highest rating</option>
+                <option value="price-asc">Lowest price</option>
+                <option value="duration-asc">Fastest</option>
+              </select>
+            </div>
+          </section>
+
+          <section class="panel-block stats-panel">
+            <h2>Quick stats</h2>
+            <div class="stat-grid">
+              <div>
+                <span id="coursesCount">0</span>
+                <small>courses</small>
+              </div>
+              <div>
+                <span id="avgPrice">$0</span>
+                <small>avg. price</small>
+              </div>
+              <div>
+                <span id="avgRating">0.0</span>
+                <small>avg. rating</small>
+              </div>
+            </div>
+          </section>
+        </aside>
+
+        <section class="content-panel">
+          <div class="selection-summary" id="selectionSummary">
+            <span>No courses selected</span>
+          </div>
+
+          <div id="coursesGrid" class="courses-grid" aria-live="polite"></div>
+        </section>
+
+        <aside class="comparison-panel">
+          <h2>Course comparison</h2>
+          <div id="comparisonTable" class="comparison-table">
+            <p class="placeholder-text">Select up to 3 courses to compare.</p>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

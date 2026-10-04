@@ -1,0 +1,20 @@
+{
+  "name": "ecourse-comparator",
+  "version": "1.0.0",
+  "description": "Course comparison dashboard for evaluating online learning options.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "courses",
+    "education",
+    "comparison",
+    "dashboard"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
